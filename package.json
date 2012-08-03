@@ -1,0 +1,18 @@
+{
+  "name": "confirmation-component",
+  "description": "Confirmation component",
+  "version": "0.0.1",
+  "keywords": ["confirmation", "component"],
+  "dependencies": {
+    "dialog-component": "*"
+  },
+  "component": {
+    "styles": ["confirmation.css"],
+    "scripts": {
+      "confirmation": "index.js"
+    },
+    "templates": {
+      "confirmation": "confirmation.html"
+    }
+  }
+}
