@@ -89,7 +89,7 @@ Confirmation.prototype.ok = function(text){
 
 Confirmation.prototype.show = function(fn){
   Dialog.prototype.show.call(this);
-  this.el.find('.ok').focus();
+  this.el.find('.cancel').focus();
   this.callback = fn || function(){};
   return this;
 };
