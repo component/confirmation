@@ -37,6 +37,11 @@ $ npm install confirmation-component
 
   Display a confirmation dialog with `title` and `msg`.
 
+### Confirmation#focus(type)
+
+  By default the "cancel" button is focused, however you
+  may invoke `.focus('ok')`.
+
 ### Confirmation#cancel(text)
 
   Set cancel button `text`.
