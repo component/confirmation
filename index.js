@@ -54,6 +54,19 @@ function Confirmation(options) {
 Confirmation.prototype.__proto__ = Dialog.prototype;
 
 /**
+ * Focus `type`, either "ok" or "cancel".
+ *
+ * @param {String} type
+ * @return {Confirmation}
+ * @api public
+ */
+
+Confirmation.prototype.focus = function(type){
+  this.el.find('.' + type).focus();
+  return this;
+};
+
+/**
  * Change "cancel" button `text`.
  *
  * @param {String} text
@@ -89,7 +102,7 @@ Confirmation.prototype.ok = function(text){
 
 Confirmation.prototype.show = function(fn){
   Dialog.prototype.show.call(this);
-  this.el.find('.cancel').focus();
+  this.focus('cancel');
   this.callback = fn || function(){};
   return this;
 };
