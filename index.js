@@ -45,6 +45,7 @@ function confirm(title, msg) {
 
 function Confirmation(options) {
   Dialog.call(this, options);
+  this.focus('cancel');
 };
 
 /**
@@ -62,7 +63,7 @@ Confirmation.prototype.__proto__ = Dialog.prototype;
  */
 
 Confirmation.prototype.focus = function(type){
-  this.el.find('.' + type).focus();
+  this._focus = type;
   return this;
 };
 
@@ -102,7 +103,7 @@ Confirmation.prototype.ok = function(text){
 
 Confirmation.prototype.show = function(fn){
   Dialog.prototype.show.call(this);
-  this.focus('cancel');
+  this.el.find('.' + this._focus).focus();
   this.callback = fn || function(){};
   return this;
 };

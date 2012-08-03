@@ -16,6 +16,7 @@
       Dialog.effect = 'slide';
 
       confirm('Are you sure?')
+        .focus('ok')
         .show(function(yes){
           if (yes) {
             console.log('removed');
