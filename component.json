@@ -2,11 +2,21 @@
   "name": "confirmation",
   "description": "Confirmation component",
   "version": "0.0.1",
-  "keywords": ["confirmation", "ui"],
+  "keywords": [
+    "confirmation",
+    "ui"
+  ],
   "dependencies": {
     "component/dialog": "*"
   },
-  "scripts": ["index.js"],
-  "styles": ["confirmation.css"],
-  "templates": ["confirmation.html"]
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "confirmation.css"
+  ],
+  "templates": [
+    "confirmation.html"
+  ],
+  "license": "MIT"
 }
