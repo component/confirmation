@@ -10,13 +10,11 @@
     "component/dialog": "*"
   },
   "scripts": [
-    "index.js"
+    "index.js",
+    "confirmation.js"
   ],
   "styles": [
     "confirmation.css"
-  ],
-  "templates": [
-    "confirmation.html"
   ],
   "license": "MIT"
 }

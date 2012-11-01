@@ -3,7 +3,8 @@
  * Module dependencies.
  */
 
-var Dialog = require('dialog').Dialog;
+var Dialog = require('dialog').Dialog
+  , html = require('./confirmation');
 
 /**
  * Expose `confirm()`.
@@ -120,7 +121,7 @@ Confirmation.prototype.show = function(fn){
 
 Confirmation.prototype.render = function(options){
   var self = this
-  var actions = $(render('confirmation'));
+  var actions = $(html);
   Dialog.prototype.render.call(this, options);
 
   this.el.addClass('confirmation');

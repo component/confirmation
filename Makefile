@@ -1,8 +1,14 @@
 
-test/out.js: index.js confirmation.css
-	component build package.json test/out
+build: components index.js confirmation.js
+	@component build
+
+confirmation.js: confirmation.html
+	@component convert $<
+
+components:
+	@component install
 
 clean:
-	rm -f test/out.{js,css}
+	rm -fr build components
 
 .PHONY: clean
