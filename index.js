@@ -3,8 +3,8 @@
  */
 
 var Dialog = require('dialog').Dialog
-  , $ = require('jquery'),
-  , html = require('./confirmation');
+  , html = require('./confirmation')
+  , $ = require('jquery')
 
 /**
  * Expose `confirm()`.
