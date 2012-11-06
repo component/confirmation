@@ -7,6 +7,7 @@
     "ui"
   ],
   "dependencies": {
+    "component/jquery": "*",
     "component/dialog": "*"
   },
   "scripts": [

@@ -1,9 +1,9 @@
-
 /**
  * Module dependencies.
  */
 
 var Dialog = require('dialog').Dialog
+  , $ = require('jquery'),
   , html = require('./confirmation');
 
 /**
