@@ -53,7 +53,7 @@ function Confirmation(options) {
  * Inherits from `Dialog.prototype`.
  */
 
-Confirmation.prototype.__proto__ = Dialog.prototype;
+Confirmation.prototype = new Dialog;
 
 /**
  * Focus `type`, either "ok" or "cancel".
