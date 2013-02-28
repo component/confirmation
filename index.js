@@ -4,6 +4,7 @@
 
 var Dialog = require('dialog').Dialog
   , html = require('./confirmation')
+  , inherit = require('inherit')
   , $ = require('jquery')
 
 /**
@@ -53,7 +54,7 @@ function Confirmation(options) {
  * Inherits from `Dialog.prototype`.
  */
 
-Confirmation.prototype.__proto__ = Dialog.prototype;
+inherit(Confirmation, Dialog);
 
 /**
  * Focus `type`, either "ok" or "cancel".

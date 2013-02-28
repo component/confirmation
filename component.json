@@ -8,7 +8,8 @@
   ],
   "dependencies": {
     "component/jquery": "*",
-    "component/dialog": "*"
+    "component/dialog": "*",
+    "component/inherit": "*"
   },
   "scripts": [
     "index.js",
