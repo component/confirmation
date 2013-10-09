@@ -2,17 +2,26 @@
   "name": "confirmation-component",
   "description": "Confirmation component",
   "version": "0.0.3",
-  "keywords": ["confirmation", "component"],
+  "keywords": [
+    "confirmation",
+    "component"
+  ],
   "dependencies": {
     "dialog-component": "*"
   },
   "component": {
-    "styles": ["confirmation.css"],
+    "styles": [
+      "confirmation.css"
+    ],
     "scripts": {
       "confirmation": "index.js"
     },
     "templates": {
       "confirmation": "confirmation.html"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/component/confirmation.git"
   }
 }
