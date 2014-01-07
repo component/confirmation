@@ -20,7 +20,7 @@ exports = module.exports = confirm;
 exports.Confirmation = Confirmation;
 
 /**
- * Return a new `Confirmation` with the given 
+ * Return a new `Confirmation` with the given
  * (optional) `title` and `msg`.
  *
  * @param {String} title or msg
@@ -78,7 +78,7 @@ Confirmation.prototype.focus = function(type){
  */
 
 Confirmation.prototype.cancel = function(text){
-  this.el.find('.cancel').text(text);
+  $(this.el).find('.cancel').text(text);
   return this;
 };
 
@@ -91,7 +91,7 @@ Confirmation.prototype.cancel = function(text){
  */
 
 Confirmation.prototype.ok = function(text){
-  this.el.find('.ok').text(text);
+  $(this.el).find('.ok').text(text);
   return this;
 };
 
@@ -105,7 +105,7 @@ Confirmation.prototype.ok = function(text){
 
 Confirmation.prototype.show = function(fn){
   Dialog.prototype.show.call(this);
-  this.el.find('.' + this._focus).focus();
+  $(this.el).find('.' + this._focus).focus();
   this.callback = fn || function(){};
   return this;
 };
@@ -125,8 +125,9 @@ Confirmation.prototype.render = function(options){
   var actions = $(html);
   Dialog.prototype.render.call(this, options);
 
-  this.el.addClass('confirmation');
-  this.el.append(actions);
+  $(this.el)
+    .addClass('confirmation')
+    .append(actions);
 
   this.on('close', function(){
     self.emit('cancel');
