@@ -7,9 +7,10 @@
     "ui"
   ],
   "dependencies": {
-    "component/jquery": "*",
+    "component/event": "*",
     "component/dialog": "*",
-    "component/inherit": "*"
+    "component/inherit": "*",
+    "component/query": "*"
   },
   "scripts": [
     "index.js",

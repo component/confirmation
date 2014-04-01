@@ -3,9 +3,10 @@
  */
 
 var Dialog = require('dialog').Dialog
+  , events = require('event')
+  , q = require('query')
   , html = require('./confirmation')
-  , inherit = require('inherit')
-  , $ = require('jquery')
+  , inherit = require('inherit');
 
 /**
  * Expose `confirm()`.
@@ -48,7 +49,7 @@ function confirm(title, msg) {
 function Confirmation(options) {
   Dialog.call(this, options);
   this.focus('cancel');
-};
+}
 
 /**
  * Inherits from `Dialog.prototype`.
@@ -78,7 +79,7 @@ Confirmation.prototype.focus = function(type){
  */
 
 Confirmation.prototype.cancel = function(text){
-  $(this.el).find('.cancel').text(text);
+  q('.cancel', this.el).innerHTML = text;
   return this;
 };
 
@@ -91,7 +92,7 @@ Confirmation.prototype.cancel = function(text){
  */
 
 Confirmation.prototype.ok = function(text){
-  $(this.el).find('.ok').text(text);
+  q('.ok', this.el).innerHTML = text;
   return this;
 };
 
@@ -105,7 +106,7 @@ Confirmation.prototype.ok = function(text){
 
 Confirmation.prototype.show = function(fn){
   Dialog.prototype.show.call(this);
-  $(this.el).find('.' + this._focus).focus();
+  q('.' + this._focus, this.el).focus();
   this.callback = fn || function(){};
   return this;
 };
@@ -121,13 +122,11 @@ Confirmation.prototype.show = function(fn){
  */
 
 Confirmation.prototype.render = function(options){
-  var self = this
-  var actions = $(html);
+  var self = this;
   Dialog.prototype.render.call(this, options);
 
-  $(this.el)
-    .addClass('confirmation')
-    .append(actions);
+  this._classes.add('confirmation');
+  this.el.insertAdjacentHTML('beforeend', html);
 
   this.on('close', function(){
     self.emit('cancel');
@@ -139,14 +138,14 @@ Confirmation.prototype.render = function(options){
     self.callback(false);
   });
 
-  actions.find('.cancel').click(function(e){
+  events.bind(q('.cancel', this.el), 'click', function(e){
     e.preventDefault();
     self.emit('cancel');
     self.callback(false);
     self.hide();
   });
 
-  actions.find('.ok').click(function(e){
+  events.bind(q('.ok', this.el), 'click', function(e){
     e.preventDefault();
     self.emit('ok');
     self.callback(true);
