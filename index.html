@@ -1,0 +1,70 @@
+<!DOCTYPE 5>
+<html>
+  <head>
+    <title>Confirmation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="./build/build.css" />
+  </head>
+  <body>
+    <title>Confirmation</title>
+    <script src="./build/build.js"></script>
+    <script>
+      var confirm = require('confirmation')
+        , Dialog = require('component-dialog');
+
+      Dialog.effect = 'slide';
+
+      confirm('Are you sure?')
+        .focus('ok')
+        .show(function(yes){
+          if (yes) {
+            console.log('removed');
+          } else {
+            console.log('not removed');
+          }
+          title();
+        });
+
+      function title() {
+        confirm('Delete user', 'Are you sure?')
+          .show(function(yes){
+            if (yes) {
+              console.log('removed');
+            } else {
+              console.log('not removed');
+            }
+            modal();
+          });
+      }
+
+      function modal() {
+        confirm('Delete user', 'Are you sure?')
+          .modal()
+          .show(function(yes){
+            if (yes) {
+              console.log('removed');
+            } else {
+              console.log('not removed');
+            }
+            closable();
+          });
+      }
+
+      function closable() {
+        confirm('Closable')
+          .modal()
+          .closable()
+          .cancel('Dont do it!')
+          .ok('Do it!')
+          .show(function(yes){
+            if (yes) {
+              console.log('removed');
+            } else {
+              console.log('not removed');
+            }
+          });
+      }
+
+    </script>
+  </body>
+</html>
