@@ -19,5 +19,6 @@
   "styles": [
     "confirmation.css"
   ],
+  "demo": "http://component.github.io/confirmation/",
   "license": "MIT"
 }

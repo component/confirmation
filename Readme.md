@@ -7,6 +7,8 @@
   ![js confirmation component](http://f.cl.ly/items/142j0B0d1E2K3z0r3h0i/Screen%20Shot%202012-08-03%20at%2011.37.49%20AM.png)
   ![confirm](http://f.cl.ly/items/0o0z3T2R0o1v3S1E3d2W/Screen%20Shot%202012-08-03%20at%2011.37.57%20AM.png)
 
+  Live demo is [here](http://component.github.io/confirmation/)
+
 ## Installation
 
 ```
