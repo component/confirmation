@@ -13,11 +13,13 @@
     "component/query": "*"
   },
   "scripts": [
-    "index.js",
-    "confirmation.js"
+    "index.js"
   ],
   "styles": [
     "confirmation.css"
+  ],
+  "templates": [
+    "confirmation.html"
   ],
   "demo": "http://component.github.io/confirmation/",
   "license": "MIT"
