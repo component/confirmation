@@ -1,9 +1,6 @@
 
-build: components index.js confirmation.js
+build: components index.js confirmation.html
 	@component build
-
-confirmation.js: confirmation.html
-	@component convert $<
 
 components:
 	@component install

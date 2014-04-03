@@ -5,7 +5,7 @@
 var Dialog = require('dialog').Dialog
   , events = require('event')
   , q = require('query')
-  , html = require('./confirmation')
+  , html = require('./confirmation.html')
   , inherit = require('inherit');
 
 /**
